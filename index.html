@@ -4,71 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ebook Programação de IA: Do Zero ao Profissional</title>
+    
     <style>
-        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 20px auto; padding: 0 20px; text-align: center; }
-        header { background-color: #2c3e50; color: white; padding: 40px 20px; }
-        header h1 { font-size: 2.5em; margin: 0; }
-        header p { font-size: 1.2em; }
-        .ebook-cover { max-width: 300px; margin: 30px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .cta-button { display: inline-block; background-color: #27ae60; color: white; padding: 20px 40px; font-size: 1.5em; font-weight: bold; text-decoration: none; border-radius: 8px; margin: 30px 0; transition: background-color 0.3s; }
-        .cta-button:hover { background-color: #2ecc71; }
-        .section { padding: 40px 0; border-bottom: 1px solid #eee; }
-        h2 { color: #2c3e50; }
-        ul { text-align: left; display: inline-block; }
-        .guarantee { background-color: #f4f4f4; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        footer { background-color: #333; color: white; padding: 20px; margin-top: 40px; }
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700&display=swap');
+
+        /* Configurações Gerais e Paleta de Cores */
+        body { 
+            font-family: 'Lato', sans-serif; /* Fonte principal para textos */
+            line-height: 1.8; 
+            color: #4A4A4A; /* Cinza escuro para melhor legibilidade */
+            margin: 0; 
+            padding: 0;
+            background-color: #F9F9F9; /* Fundo levemente acinzentado */
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 20px auto; 
+            padding: 0 20px; 
+            text-align: center; 
+        }
+        .section { 
+            padding: 50px 0; 
+            border-bottom: 1px solid #EAEAEA; 
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif; /* Fonte de impacto para títulos */
+            color: #0D1B2A; /* Azul escuro, quase preto, para títulos */
+        }
+        h2 { font-size: 2.2em; }
+        ul { text-align: left; display: inline-block; list-style-type: none; padding-left: 0; }
+        ul li { margin-bottom: 15px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23415A77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center; padding-left: 40px; font-size: 1.1em; }
+
+        /* Estilos do Header */
+        header { 
+            background-color: #0D1B2A; /* Cor primária (azul escuro) */
+            color: white; 
+            padding: 60px 20px;
+            background-image: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8)), url('https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        header h1 { 
+            font-size: 3em; 
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p { 
+            font-size: 1.3em;
+            max-width: 600px;
+            margin: 15px auto 0 auto;
+        }
+
+        /* Estilos da Capa do Ebook */
+        .ebook-cover { 
+            max-width: 300px; 
+            margin: 30px 0; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease-in-out;
+        }
+        .ebook-cover:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        /* Estilos do Botão de Compra (CTA) */
+        .cta-button { 
+            display: inline-block; 
+            background-color: #E76F51; /* Cor de destaque (laranja queimado) */
+            color: white; 
+            padding: 20px 40px; 
+            font-size: 1.6em; 
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            margin: 30px 0; 
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(231, 111, 81, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover { 
+            background-color: #F4A261; /* Variação do laranja para o hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 111, 81, 0.5);
+        }
+
+        /* Estilos das Seções Adicionais */
+        #autor img {
+            width:150px; 
+            height:150px; 
+            border-radius:50%;
+            border: 5px solid #EAEAEA;
+        }
+        #faq div {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #faq p {
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-left: 4px solid #415A77; /* Cor secundária (azul acinzentado) */
+            margin-bottom: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        /* Estilos do Rodapé */
+        footer { 
+            background-color: #0D1B2A; 
+            color: #EAEAEA; 
+            padding: 30px; 
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>De Zero a Programador de IA: O Guia Definitivo</h1>
-            <p>O roteiro passo a passo para dominar Python, Machine Learning e criar projetos de impacto, mesmo que você esteja começando do absoluto zero.</p>
+            <h1>Cansado de Tutoriais Confusos? Chegou o Roteiro Definitivo para sua Carreira em IA.</h1>
+            <p>Domine Python e Machine Learning com um guia passo a passo, prático e sem enrolação, e construa projetos de impacto mesmo que você esteja começando do absoluto zero.</p>
         </div>
     </header>
 
     <main class="container">
-        <a href="COLE_AQUI_SEU_LINK_DE_CHECKOUT_DA_HOTMART_KIWIFY_ETC" class="cta-button">QUERO GARANTIR MEU ACESSO AGORA!</a>
+        <a href="[COLE_AQUI_SEU_LINK_DE_CHECKOUT_DA_HOTMART_KIWIFY_ETC]" class="cta-button">QUERO GARANTIR MEU EBOOK AGORA!</a>
 
-        <section id="problema">
-            <img src="URL_DA_IMAGEM_DA_SUA_CAPA.png" alt="Capa do Ebook Programação de IA" class="ebook-cover">
+        <section id="apresentacao">
+            <img src="[URL_DA_IMAGEM_DA_SUA_CAPA.png]" alt="Capa do Ebook Programação de IA" class="ebook-cover">
 
-            <h2>Você se sente perdido estudando Inteligência Artificial?</h2>
-            <p>A quantidade de cursos, vídeos e artigos é enorme e muitas vezes confusa. É fácil se sentir travado, sem saber qual o próximo passo ou como aplicar a teoria na prática. Você começa animado, mas a falta de um roteiro claro te desmotiva.</p>
+            <h2>Chega de andar em círculos. É hora de avançar.</h2>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1em;">Você já passou horas no YouTube pulando de um tutorial para outro, e no final do dia sentiu que não aprendeu nada de concreto? Aquele sentimento de estar sobrecarregado com tanta informação, sem saber o que é essencial, é frustrante e atrasa o seu sonho de trabalhar com tecnologia.<br><br><strong>Este ebook é a solução.</strong> Ele foi estruturado como um mapa, um GPS que te guia pela jornada exata que você precisa percorrer: desde a configuração do seu ambiente até a criação de modelos de IA que resolvem problemas reais.</p>
         </section>
 
-        <section id="solucao">
-            <h2>Este Ebook é o mapa que você precisava.</h2>
-            <p>Eu compilei todo o conhecimento essencial em um guia direto ao ponto. Sem enrolação, focando no que realmente importa para você sair do zero e construir seus primeiros modelos de IA. Ele é o seu mentor particular, disponível 24 horas por dia.</p>
-        </section>
-
-        <section id="beneficios">
-            <h2>O que você vai aprender:</h2>
+        <section id="beneficios" class="section">
+            <h2>O que você será capaz de fazer ao final da leitura:</h2>
             <ul>
-                <li>✅ Configurar seu ambiente de desenvolvimento como um profissional.</li>
-                <li>✅ Dominar as bibliotecas essenciais: NumPy e Pandas.</li>
-                <li>✅ Entender os pilares do Machine Learning (Supervisionado, Não Supervisionado).</li>
-                <li>✅ Construir e treinar seus próprios modelos de previsão.</li>
-                <li>✅ Aplicar a IA para resolver problemas de negócios reais.</li>
-                <li>✅ E muito mais!</li>
+                <li><strong>Construir uma Base Sólida:</strong> Configure seu ambiente de desenvolvimento e domine os fundamentos da programação Python para nunca mais se sentir perdido.</li>
+                <li><strong>Manipular Dados como um Profissional:</strong> Aprenda a usar NumPy e Pandas para organizar, limpar e preparar qualquer tipo de dado, uma habilidade essencial na área.</li>
+                <li><strong>Criar Modelos Preditivos Reais:</strong> Utilize o Scikit-learn para treinar modelos de Machine Learning capazes de prever tendências, classificar informações e muito mais.</li>
+                <li><strong>Entender a Lógica por Trás da Magia:</strong> Desmistifique o que é Aprendizado Supervisionado e Não Supervisionado e saiba exatamente quando e como aplicar cada técnica.</li>
+                <li><strong>Acelerar sua Carreira:</strong> Ganhe a confiança e o conhecimento prático para adicionar "Inteligência Artificial" ao seu currículo e impressionar em entrevistas de emprego.</li>
             </ul>
         </section>
+
+        <section id="autor" class="section">
+            <h2>Sobre o Autor</h2>
+            <img src="[URL_DA_SUA_FOTO.jpg]" alt="Foto do Autor">
+            <h4>[SEU NOME]</h4>
+            <p style="max-width: 600px; margin: 0 auto;">Olá! Sou [Seu Nome], um entusiasta de tecnologia que, assim como você, começou do zero. Depois de [conte brevemente sua jornada ou sua paixão pela área], percebi que faltava um material em português que fosse direto ao ponto, sem complicação. Por isso, criei este guia para ser o atalho que eu gostaria de ter tido no meu início de carreira. Meu objetivo é um só: tornar a Inteligência Artificial acessível para todos.</p>
+        </section>
+
+        <section id="faq" class="section">
+            <h2>Ainda tem alguma dúvida?</h2>
+            <div>
+                <p><strong>Para quem é este ebook?</strong><br>
+                Para iniciantes absolutos, estudantes de tecnologia, profissionais de outras áreas querendo migrar para dados/IA e qualquer pessoa curiosa que queira um roteiro claro de estudos.</p>
+                
+                <p><strong>Preciso saber matemática ou programação avançada?</strong><br>
+                Não! O guia foi desenhado para quem está começando do zero. Todos os conceitos fundamentais são explicados de forma simples, focada na aplicação prática.</p>
+                
+                <p><strong>Como receberei o acesso ao ebook?</strong><br>
+                O acesso é imediato após a confirmação do pagamento. Você receberá um e-mail da plataforma de compra com o link para baixar seu PDF com segurança.</p>
+                
+                <p><strong>Posso ler no celular ou tablet?</strong><br>
+                Sim! O ebook está em formato PDF de alta qualidade, compatível com todos os dispositivos: computadores, tablets e celulares.</p>
+            </div>
+        </section>
         
-        <section id="cta-final">
-            <h2>Pronto para iniciar sua jornada?</h2>
-            <p>Clique no botão abaixo e receba acesso imediato ao ebook que vai acelerar sua carreira em Inteligência Artificial.</p>
-            <a href="COLE_AQUI_SEU_LINK_DE_CHECKOUT_DA_HOTMART_KIWIFY_ETC" class="cta-button">SIM, QUERO ME TORNAR UM PROGRAMADOR DE IA!</a>
+        <section id="cta-final" class="section">
+            <h2>Sua jornada para se tornar um programador de IA começa agora.</h2>
+            <p>Clique no botão abaixo e receba acesso imediato ao guia completo. Todo o conhecimento que você precisa, organizado e simplificado, por um preço especial de lançamento.</p>
+            <a href="[COLE_AQUI_SEU_LINK_DE_CHECKOUT_DA_HOTMART_KIWIFY_ETC]" class="cta-button">SIM, QUERO TRANSFORMAR MINHA CARREIRA!</a>
 
             <div class="guarantee">
-                <p><strong>RISCO ZERO!</strong> Você tem 7 dias de garantia incondicional. Se por qualquer motivo você não achar que este guia é para você, basta pedir o reembolso e nós devolveremos 100% do seu dinheiro, sem perguntas.</p>
+                <img src="https://img.icons8.com/plasticine/100/000000/guarantee.png" alt="Selo de Garantia">
+                <p><strong>RISCO ZERO!</strong> Você tem 7 dias de garantia incondicional. Se por qualquer motivo você não achar que este guia é para você, basta pedir o reembolso e nós devolveremos 100% do seu dinheiro, sem ressentimentos e sem perguntas.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Seu Nome ou Nome da Sua Empresa. Todos os direitos reservados.</p>
+        <p>&copy; 2025 [SEU NOME OU NOME DA SUA EMPRESA]. Todos os direitos reservados.</p>
+        <p>Este é um produto digital e você receberá o acesso por e-mail.</p>
     </footer>
 
 </body>
